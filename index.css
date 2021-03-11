@@ -1,0 +1,65 @@
+* {
+  font-family: "Open Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+
+.main-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.nav-item .active {
+  margin-left: 680px;
+}
+
+.nav-item .active:hover {
+  background-color: lightgrey;
+}
+
+.violet-button {
+  background-color: white;
+  border: 0.8px solid #0177b6;
+  color: #0177b6;
+  padding: 0px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-left: 30px;
+  border-radius: 50px;
+}
+
+.violet-button:hover {
+  border: 2px solid;
+  background-color: lightcyan;
+}
+
+.header-text {
+  color: #0177b6;
+  font-size: 3.2rem;
+  margin-top: 25px;
+  margin-left: 30px;
+}
+
+.rect-box {
+  border: 1px solid grey;
+  text-decoration: none;
+  color: lightslategray;
+  margin-left: 50px;
+  height: 60px;
+  width: 79%;
+  margin-bottom: 20px;
+  background-color: aliceblue;
+  font-size: larger;
+  text-align: left;
+  padding-left: 20px;
+  transition: box-shadow 0.2s;
+}
+
+.rect-box:hover {
+  box-shadow: 10px 10px 11px rgba(33, 33, 33, 0.2);
+}
+
+.rect-box > img {
+  filter: invert(0.5) sepia(3) hue-rotate(202deg) saturate(4) brightness(1);
+}

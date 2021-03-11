@@ -1,0 +1,38 @@
+body {
+  background-color: #f3f2ef;
+}
+.main-image {
+  margin: -40px auto;
+}
+
+.image-container {
+  display: flex;
+  align-items: center;
+}
+.main-container {
+  width: 25%;
+  margin: 3% auto;
+  background-color: white;
+  padding: 40px;
+  height: 450px;
+  border-radius: 20px;
+}
+
+* {
+  font-family: "Open Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+.btn.btn-primary {
+  border-radius: 30px;
+  height: 45px;
+  background-color: #0177b6;
+}
+
+.btn.btn-primary.google-button {
+  background-color: #ffffff;
+  color: #0177b6;
+}
+
+h6 > a {
+  text-decoration: none;
+}
