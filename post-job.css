@@ -1,0 +1,47 @@
+.post-job-body {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.post-job-card {
+  padding: 30px;
+  margin-top: 20px;
+  display: flex;
+  height: 440px;
+  width: 400px;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.post-job-inputs > input {
+  width: 300px;
+  display: flex;
+}
+
+.post-job-inputs > p,
+.post-job-inputs > label {
+  margin-bottom: 1.5px;
+}
+
+.post-job-inputs {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.job-post-button {
+  height: 40px;
+  width: 300px;
+  margin-top: 30px;
+  margin-left: 20px;
+  background-color: #0a66c2;
+  color: white;
+  border: none;
+}
+
+.job-post-button:hover {
+  box-shadow: 0px 19px 19px rgba(33, 33, 33, 0.2);
+}

@@ -1,0 +1,75 @@
+.jobs-header-card {
+  display: flex;
+  align-items: center;
+  margin-top: -25px;
+  height: 60px;
+  width: 100%;
+  background-color: #ffffff;
+  border: 2px solid gainsboro;
+  border-radius: 15px;
+}
+
+.job-icon-with-sidetext > button {
+  display: flex;
+  text-decoration: none;
+  color: black;
+  border: none;
+  background-color: transparent;
+}
+
+.vertical-line {
+  border-left: 1px solid grey;
+  margin-left: 12px;
+}
+
+.post-job-button > button {
+  align-items: center;
+  display: flex;
+  background-color: transparent;
+  border: 2px solid #0077b7;
+  height: 70%;
+  width: 140px;
+  color: #0077b7;
+  font-weight: bold;
+}
+
+.post-job-button > button:hover {
+  background-color: #e2f0fe;
+}
+
+.search-job-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
+  height: 160px;
+  width: 100%;
+  background-color: #dce6f1;
+  border: 2px solid gainsboro;
+  border-radius: 15px;
+  box-shadow: 0px 0px 8px rgba(160, 160, 160, 0.2);
+}
+
+.recommended-jobs-section {
+  padding: 35px;
+  display: flex;
+  margin-top: 15px;
+  height: 1460px;
+  width: 100%;
+  background-color: #ffffff;
+  border: 2px solid gainsboro;
+  border-radius: 15px;
+  justify-content: space-between;
+  flex-flow: row wrap;
+}
+
+.rec-job-card {
+  margin-top: 20px;
+  height: 420px;
+  width: 30%;
+  border: 2px solid gainsboro;
+}
+
+.rec-job-card:hover {
+  box-shadow: 0px 19px 19px rgba(33, 33, 33, 0.2);
+}

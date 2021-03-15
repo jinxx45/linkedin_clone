@@ -10,7 +10,7 @@
 
 .body-container {
   width: 80%;
-  margin: 50px auto;
+  margin: 100px auto;
 }
 
 body {
@@ -18,8 +18,12 @@ body {
 }
 
 .nav-head {
-  background-color: #ffffff;
+  background-color: white;
   box-shadow: 0px 0px 11px rgba(33, 33, 33, 0.2);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
 }
 
 .nav-search {
@@ -69,6 +73,7 @@ body {
 
 .icon-with-text:hover {
   filter: invert(0.5) sepia(5) hue-rotate(202deg) saturate(10) brightness(1);
+  font-weight: bolder;
 }
 
 .left-card {
@@ -80,7 +85,7 @@ body {
 }
 
 .post-card {
-  height: 100px;
+  height: 150px;
   width: 100%;
   background-color: #ffffff;
   border: 1px solid gainsboro;
@@ -94,4 +99,59 @@ body {
   background-color: #ffffff;
   border: 1px solid gainsboro;
   border-radius: 7px;
+}
+
+.userdp {
+  display: flex;
+  align-items: center;
+}
+
+.userdp > img {
+  border: 1px solid grey;
+  border-radius: 50%;
+  background-color: gold;
+  margin-top: 5px;
+}
+
+.post-button {
+  display: flex;
+  flex-grow: 0.9;
+  height: 60px;
+  border-radius: 35px;
+  align-items: center;
+  padding-left: 20px;
+  justify-content: left !important;
+  background-color: #ffffff;
+  color: black;
+  font-size: larger;
+}
+
+.post-button:hover {
+  background-color: #ebebeb;
+}
+
+.upload-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.icon-with-sidetext > button {
+  display: flex;
+  text-decoration: none;
+  color: black;
+  height: 44px;
+  border: none;
+  background-color: #ffffff;
+}
+
+.icon-with-sidetext > button:hover {
+  color: black;
+  font-weight: bolder;
+}
+
+.post-content-card {
+  background-color: white;
+  height: 600px;
+  width: 100%;
 }
