@@ -77,11 +77,14 @@ body {
 }
 
 .left-card {
-  height: 500px;
-  width: 100%;
+  height: 160px;
+  width: 300px;
   background-color: #ffffff;
   border: 1px solid gainsboro;
   border-radius: 7px;
+  position: fixed;
+  
+  right: 50;
 }
 
 .post-card {
@@ -93,20 +96,23 @@ body {
 }
 
 .right-card {
+  padding: 10px;
+  padding-left: 13px;
   height: 300px;
-  width: 100%;
+  width: 300px;
   justify-content: flex-start;
   background-color: #ffffff;
   border: 1px solid gainsboro;
   border-radius: 7px;
+  position: fixed;
 }
 
-.userdp {
+.defaultuserdp {
   display: flex;
   align-items: center;
 }
 
-.userdp > img {
+.defaultuserdp > img {
   border: 1px solid grey;
   border-radius: 50%;
   background-color: gold;
@@ -151,7 +157,98 @@ body {
 }
 
 .post-content-card {
+  margin-bottom: 40px;
   background-color: white;
   height: 600px;
   width: 100%;
+  padding: 20px;
+}
+
+.user-profile-image{
+  height: 80px;
+  width: 80px;
+  resize: none;
+  border: 2px solid cadetblue;
+  
+}
+
+.post-username{
+  margin-left: 10px;
+  font-size: 1.1rem;
+  font-family: 'Courier New', Courier, monospace; 
+  font-weight: 700;
+}
+
+.post-header{
+  display: flex
+}
+
+.post-follower-count {
+  margin-top: -20px;
+  margin-left: 10px;
+  font-size: 0.8rem;
+}
+
+.post-time{
+  margin-top: -17px;
+  margin-left: 10px;
+  font-size: 0.8rem;
+}
+
+.post-caption-text{
+  letter-spacing: 0.8px;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.user-postedimage{
+  width: 100%;
+  height: 400px;
+}
+
+.left-card-menu-items{
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  
+}
+
+.left-card-menu-items>a{
+  padding-top: 10px;
+  text-decoration: none;
+}
+
+.right-card-header{
+  padding-left: 2px;
+  font-weight: 700;
+}
+
+.news-description{
+  margin-top: -20px;
+  display: flex;
+  font-size: 0.8rem;
+}
+
+.news-description>p{
+  padding-right: 10px;
+}
+
+.news-heading{
+  font-weight: 800;
+}
+
+.individual-news{
+  margin-top: -10px;
+}
+
+.news-columns>a{
+  text-decoration: none;
+  color: black;
+
+}
+
+.news-columns>a:hover{
+  color: cadetblue;
+ 
 }
