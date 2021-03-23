@@ -25,22 +25,29 @@
     <div class="main-container">
         
         <!-- Form  -->
-        <form>
+        <form action="user_reg.php" method="POST">
+
+            <div class="mb-1">
+                <label for="username_signup" class="form-label">Username</label>
+                <input type="text" class="form-control" name="username"  required>
+    
+
             <div class="mb-1">
               <label for="exampleInputEmail1" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+              <input type="email" name="email-id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
               
             </div>
             <div class="mb-3">
               <label for="exampleInputPassword1" class="form-label">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" required>
+              <input type="password" name="password" class="form-control" id="exampleInputPassword1" required>
             </div>
             <div class="mb-3 form-check">
               <input type="checkbox" class="form-check-input" id="exampleCheck1">
               <label class="form-check-label" for="exampleCheck1">I Accept the user terms and conditions</label>
             </div>
             <div class="d-grid gap-2 col-10 mx-auto">
-                <button onclick="location.href='feed.html'" class="btn btn-primary" type="submit">Sign Up</button>
+                <button class="btn btn-primary" type="submit">Sign Up</button>
+              
             </div>
             <hr>
             <div class="d-grid gap-2 col-10 mx-auto">

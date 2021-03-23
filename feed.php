@@ -1,3 +1,7 @@
+<?php 
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +18,7 @@
       <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
+    
      <div class="nav-head">
           <!-- Navbar -->
             <div class="nav-container">
@@ -81,8 +86,8 @@
                 <div class="icon-container">
                     <a href="">
                         <div class="icon-with-text">
-                            <img style="margin-left: 18px;" src="assets/images/user-regular.svg" height="25" width="25" alt="">
-                            <p>My Profile</p>
+                            <img style="margin-left: 30px;" src="assets/images/user-regular.svg" height="25" width="25" alt="">
+                            <p style="width: 150px;  "><?php echo $_SESSION['username'] ?></p>
                         </div>
                     </a>
                 </div>

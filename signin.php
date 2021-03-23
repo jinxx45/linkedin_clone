@@ -1,3 +1,53 @@
+<?php
+session_start();
+ 
+include("connection.php");
+ error_reporting(E_ALL & ~E_NOTICE);
+if($_SESSION['username']){
+   header("location:feed.php");
+}
+
+$err="";
+
+
+
+if($_SERVER["REQUEST_METHOD"]=="POST"){
+     $email = $_POST['email-id']; 
+
+    
+      $pass = $_POST['pass'];  
+        $sql = "select * from user_account_credentials where email='$email' and password='$pass'";
+        $sql1 = "select username from user_account_credentials where email='$email'";  
+        $result = mysqli_query($con, $sql);  
+        $result1 = mysqli_query($con, $sql1); 
+        $row = $result1->fetch_assoc(); 
+          if ($result->num_rows > 0) 
+         {
+
+             $_SESSION['username']=$row['username'];
+            
+             header("location:feed.php");
+            
+
+         }
+         else {
+             
+            $err="invalid username or password";
+           
+
+         }
+        
+
+}
+
+?>
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,19 +75,19 @@
     <div class="main-container">
         
         <!-- Form  -->
-        <form>
+        <form action="" method="POST">
             <div class="mb-1">
               <label for="exampleInputEmail1" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+              <input name="email-id" type="email" class="form-control" aria-describedby="emailHelp" required>
               
             </div>
             <div class="mb-3">
               <label for="exampleInputPassword1" class="form-label">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" required>
+              <input name="pass" type="password" class="form-control"  required>
             </div>
            
             <div class="d-grid gap-2 col-10 mx-auto">
-                <button onclick="location.href='feed.html'" class="btn btn-primary" type="submit">Sign in</button>
+                <button  class="btn btn-primary" type="submit">Sign in</button>
             </div>
           
                 <h6 style="text-align: center; margin-top:30px">New to linkedin ? <a href="signup.html">Join now for free</a></h6>
