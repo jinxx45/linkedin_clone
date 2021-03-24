@@ -120,7 +120,7 @@
 
                     <div class=" ms-4 mt-2 defaultuserdp">
                         <img src="assets/images/user dp.png" height="70" width="70" alt="">
-                        <button  class="post-button ms-3 mt-2">Start a Post</button>
+                        <button onclick="location.href = 'www.yoursite.com';" class="post-button ms-3 mt-2">Start a Post</button>
                     </div>
 
                   
