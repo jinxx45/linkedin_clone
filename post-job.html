@@ -13,13 +13,13 @@
       <link rel="preconnect" href="https://fonts.gstatic.com">
       <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@300&display=swap" rel="stylesheet">
 
-
-
      <style>
          body{
              background-color: #0A66C2;
          }
      </style>
+
+
 </head>
 <body>
     <!-- Navbar -->
@@ -53,27 +53,37 @@
 
             <div class="post-job-card">
 
-                <form action="">
+                <form action="post-job.php" method="POST">
 
 
                     <div class="post-job-inputs">
                         <p>Job title*</p>
-                        <input type="text">
+                        <input name="job-title" type="text">
                     </div>
     
                     <div class="post-job-inputs">
                         <p>Company*</p>
-                        <input type="text">
+                        <input name="company-name" type="text">
                     </div>
     
                     <div class="post-job-inputs">
                         <p>Job Location*</p>
-                        <input type="text">
+                        <input name="job-loc" type="text">
+                    </div>
+
+                    <div class="post-job-inputs">
+                        <p>Job Description*</p>
+                        <textarea style="border:1px solid black;" name="job-desc" id="" cols="30" rows="2"></textarea>
+                    </div>
+
+                    <div class="post-job-inputs">
+                        <p>Average Pay*</p>
+                        <input name="pay" type="text">
                     </div>
     
                     <div class="post-job-inputs">
                         <label> Employment Type* </label>  
-                            <select>  
+                            <select name="job-type">  
                             <option value = "Choose One">Choose One  
                             </option>  
                             <option value = "Full Time"> Full Time 
@@ -85,7 +95,7 @@
                             </select> 
                     </div>
 
-                    <button class="job-post-button">
+                    <button type="submit" class="job-post-button">
                         Post a Job
                     </button>
 

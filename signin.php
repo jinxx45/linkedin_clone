@@ -25,6 +25,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
          {
 
              $_SESSION['username']=$row['username'];
+             $_SESSION['uid']=$row['user_id'];
             
              header("location:feed.php");
             

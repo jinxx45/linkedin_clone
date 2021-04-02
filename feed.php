@@ -16,8 +16,12 @@
       <!-- google fonts -->
       <link rel="preconnect" href="https://fonts.gstatic.com">
       <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@300&display=swap" rel="stylesheet">
+      <!-- scripts -->
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 </head>
-<body>
+<body>      
     
      <div class="nav-head">
           <!-- Navbar -->
@@ -119,9 +123,80 @@
                     <!-- User Dp and the start post Button -->
 
                     <div class=" ms-4 mt-2 defaultuserdp">
-                        <img src="assets/images/user dp.png" height="70" width="70" alt="">
-                        <button  class="post-button ms-3 mt-2">Start a Post</button>
+
+                    <form id="form" action="update-profile-pic.php" method="POST" enctype="multipart/form-data">
+
+                        
+                       
+                                        <img id="imgFileUpload" alt="Update Profile Picture" title="Update Profile Picture" src="assets/images/user dp.png"  height="70" width="70" style="cursor: pointer" />
+                                        <input type="file" onchange="form.submit()"  style="display: none" />
+                                        <?php ?>
+                                        
+
+                    </form>
+                        
+                       
+                        <button type="button" data-toggle="modal" data-target="#exampleModal" class="post-button ms-3 mt-2">Start a Post</button>
                     </div>
+
+
+                    <!-- Modal Code -->
+
+
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Create a Post</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+
+                                <!-- Modal Content -->
+
+                              <div style="display: flex;">
+
+                                  <img style=" width: 50px; height: 50px;" src="assets/images/user dp.png" alt="">
+                                  <p style="font-size: 20px;"><?php echo $_SESSION['username'] ?></p>
+
+                              </div>
+
+                              <form action="upload-post.php" method="POST" enctype="multipart/form-data">
+
+                              <div class="modal-post-content">
+                                  <textarea name="caption-text" style="margin-top: 20px; border:none ;resize:none; padding:10px" placeholder="What do you want to talk about ?" name="modal-post-content" id="" cols="50" rows="4"></textarea>
+                              </div>
+
+                              <div class="modal-icons">
+
+                                    
+
+
+                                        <img id="imgFileUpload" alt="Select File" title="Select File" src="assets/images/image-upload.png"  height="40" width="40" style="cursor: pointer" />
+                                        <span id="spnFilePath"></span>
+                                        <input type="file" name="file" id="FileUpload1" style="display: none" />
+     
+                                          <a href="">
+                                            <img style="margin-left: 20px;" src="assets/images/preview.jpg" height="40" width="40" alt="">
+                                          </a>
+                                   
+                                 
+                                  
+                              </div>
+
+
+
+                            </div>
+                            <div class="modal-footer">
+                           
+                              <input type="submit" name="submit" value="Upload" class="btn btn-primary">
+                            </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
 
                   
 
@@ -158,85 +233,14 @@
                 <br>
                 <br>
 
-                <div class="post-content-card">
+                <?php
 
-                    <div class="post-header">
-                        
-                        <!-- User Profile Picture -->
-                        <img class="user-profile-image" src="assets/images/amazon dp.png" alt="">
-
-                        <!-- Username , time , follower count -->
-
-                        <div class="post-user-container">
-
-                            <!-- User Name -->
-                            <p class="post-username">Amazon</p>
-
-                            <!-- Followers Count -->
-                            <p class="post-follower-count">1,59,345 followers</p>
-
-                            <!-- Time Ago -->
-                            <p class="post-time" >16h ago</p>
-                        </div>
-
-                    </div>
-
-                    <!-- End of Post Header -->
-
-                    <!-- Post Caption -->
-
-                    
-                        <p class="post-caption-text">Are you passionate about developing innovative solutions to novel legal questions? Chart your own path with the legal team at Amazon.</p>
-                    
-
-                    <!-- Post Image -->
-
-                        <img class="user-postedimage" src="assets/images/amazon post image.jpg" alt="">
-
-                </div>
-
-
-
-                <div class="post-content-card">
-
-                    <div class="post-header">
-                        
-                        <!-- User Profile Picture -->
-                        <img class="user-profile-image" src="assets/images/google dp.png" alt="">
-
-                        <!-- Username , time , follower count -->
-
-                        <div class="post-user-container">
-
-                            <!-- User Name -->
-                            <p class="post-username">Google</p>
-
-                            <!-- Followers Count -->
-                            <p class="post-follower-count">7,99,450 followers</p>
-
-                            <!-- Time Ago -->
-                            <p class="post-time" >18h ago</p>
-                        </div>
-
-                    </div>
-
-                    <!-- End of Post Header -->
-
-                    <!-- Post Caption -->
-
-                    
-                        <p class="post-caption-text">In the newest #MyPathToGoogle Nikhil Nerkar shares his experience as an MBA intern turned Trust and Safety Strategist</p>
-                    
-
-                    <!-- Post Image -->
-
-                        <img class="user-postedimage" src="assets/images/google-post-image.jpg" alt="">
-
-                    
-
-                </div>
-
-
+                include("connection.php");
+			
+			$sql = "SELECT username, follower_count, uploaded_image_path, post_caption, no_of_likes, posted_time FROM posts order by posted_time desc";
+			$resultset = mysqli_query($con, $sql) or die("database error:". mysqli_error($con));			
+			while( $record = mysqli_fetch_assoc($resultset) ) {
+			?>
 
                 <div class="post-content-card">
 
@@ -250,13 +254,13 @@
                         <div class="post-user-container">
 
                             <!-- User Name -->
-                            <p class="post-username">Amazon</p>
+                            <p class="post-username"><?php echo $record['username'] ?></p>
 
                             <!-- Followers Count -->
-                            <p class="post-follower-count">1,59,345 followers</p>
+                            <p class="post-follower-count"><?php echo $record['follower_count'] ?> followers</p>
 
                             <!-- Time Ago -->
-                            <p class="post-time" >16h ago</p>
+                            <p class="post-time" ><?php echo $record['posted_time'] ?></p>
                         </div>
 
                     </div>
@@ -266,16 +270,20 @@
                     <!-- Post Caption -->
 
                     
-                        <p class="post-caption-text">Are you passionate about developing innovative solutions to novel legal questions? Chart your own path with the legal team at Amazon.</p>
+                        <p class="post-caption-text"><?php echo $record['post_caption'] ?></p>
                     
 
                     <!-- Post Image -->
 
-                        <img class="user-postedimage" src="assets/images/amazon post image.jpg" alt="">
-
-                    
+                        <img class="user-postedimage" src="db-files/posts/<?php echo $record['uploaded_image_path'];?>" alt="">
 
                 </div>
+
+                <?php } ?>
+
+
+
+               
 
 
 
@@ -368,6 +376,29 @@
             </div>
         </div>
     </div>
+
+    <!-- Modal Script -->
+
+    <script>
+
+    document.getElementsByClassName("file").onchange = function()
+     {
+    document.getElementById("form").submit();
+                    };
+                
+        window.onload = function () {
+            var fileupload = document.getElementById("FileUpload1");
+            var filePath = document.getElementById("spnFilePath");
+            var image = document.getElementById("imgFileUpload");
+            image.onclick = function () {
+                fileupload.click();
+            };
+            fileupload.onchange = function () {
+                var fileName = fileupload.value.split('\\')[fileupload.value.split('\\').length - 1];
+                filePath.innerHTML = "<b>Selected File: </b>" + fileName;
+            };
+        };
+    </script>
    
 </body>
 </html>

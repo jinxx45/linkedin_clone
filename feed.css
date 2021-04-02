@@ -83,7 +83,7 @@ body {
   border: 1px solid gainsboro;
   border-radius: 7px;
   position: fixed;
-  
+
   right: 50;
 }
 
@@ -164,23 +164,22 @@ body {
   padding: 20px;
 }
 
-.user-profile-image{
+.user-profile-image {
   height: 80px;
   width: 80px;
   resize: none;
   border: 2px solid cadetblue;
-  
 }
 
-.post-username{
+.post-username {
   margin-left: 10px;
   font-size: 1.1rem;
-  font-family: 'Courier New', Courier, monospace; 
+  font-family: "Courier New", Courier, monospace;
   font-weight: 700;
 }
 
-.post-header{
-  display: flex
+.post-header {
+  display: flex;
 }
 
 .post-follower-count {
@@ -189,66 +188,68 @@ body {
   font-size: 0.8rem;
 }
 
-.post-time{
+.post-time {
   margin-top: -17px;
   margin-left: 10px;
   font-size: 0.8rem;
 }
 
-.post-caption-text{
+.post-caption-text {
   letter-spacing: 0.8px;
   margin-top: 10px;
   font-size: 0.9rem;
   font-weight: 700;
 }
 
-.user-postedimage{
+.user-postedimage {
   width: 100%;
   height: 400px;
 }
 
-.left-card-menu-items{
+.left-card-menu-items {
   display: flex;
   flex-direction: column;
   padding: 20px;
-  
 }
 
-.left-card-menu-items>a{
+.left-card-menu-items > a {
   padding-top: 10px;
   text-decoration: none;
 }
 
-.right-card-header{
+.right-card-header {
   padding-left: 2px;
   font-weight: 700;
 }
 
-.news-description{
+.news-description {
   margin-top: -20px;
   display: flex;
   font-size: 0.8rem;
 }
 
-.news-description>p{
+.news-description > p {
   padding-right: 10px;
 }
 
-.news-heading{
+.news-heading {
   font-weight: 800;
 }
 
-.individual-news{
+.individual-news {
   margin-top: -10px;
 }
 
-.news-columns>a{
+.news-columns > a {
   text-decoration: none;
   color: black;
-
 }
 
-.news-columns>a:hover{
+.news-columns > a:hover {
   color: cadetblue;
- 
+}
+
+textarea {
+  border: none;
+  resize: none;
 }
