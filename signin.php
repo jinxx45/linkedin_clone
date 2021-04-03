@@ -17,15 +17,22 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     
       $pass = $_POST['pass'];  
         $sql = "select * from user_account_credentials where email='$email' and password='$pass'";
-        $sql1 = "select username from user_account_credentials where email='$email'";  
+        $sql1 = "select username, user_dp from user_account_credentials,user_personal_details where email='$email'";  
         $result = mysqli_query($con, $sql);  
         $result1 = mysqli_query($con, $sql1); 
+
+        if ($con->query($sql1)) {
+            
+            }else{
+            echo $con->error;
+            }
+
         $row = $result1->fetch_assoc(); 
           if ($result->num_rows > 0) 
          {
 
              $_SESSION['username']=$row['username'];
-             $_SESSION['uid']=$row['user_id'];
+             $_SESSION['dp_path']=$row['user_dp'];
             
              header("location:feed.php");
             

@@ -13,22 +13,23 @@ $username = $_SESSION['username'];
 
 // File upload path
 $targetDir = "db-files/profile-pics/";
-$fileName = basename($_FILES["file"]["name"]);
+$fileName = basename($_FILES["dp-file"]["name"]);
 $targetFilePath = $targetDir . $fileName;
 $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
 
-if(isset($_POST["submit"]) && !empty($_FILES["file"]["name"]))
+if(1)
 {
     // Allow certain file formats
     $allowTypes = array('jpg','png','jpeg','gif','pdf');
-    $caption_text = $_POST['caption-text'];
+    
     if(in_array($fileType, $allowTypes))
     {
         // Upload file to server
-        if(move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath))
+        if(move_uploaded_file($_FILES["dp-file"]["tmp_name"], $targetFilePath))
         {
             // Insert image file name into database
-            $insert = $con->query("INSERT into user_personal_details (user_dp,first_name) VALUES ('$fileName','$username')");
+            $insert = $con->query("UPDATE  user_personal_details SET user_dp = '$fileName' where first_name = '$username' ");
+            $post_dp_change = $con->query("UPDATE  posts SET user_dp = '$fileName' where username = '$username' ");
             if($insert){
                 $statusMsg = "The file ".$fileName. " has been uploaded successfully.";
             }else{

@@ -8,6 +8,7 @@ $statusMsg = '';
 
 
 $username = $_SESSION['username'];
+$userdp = $_SESSION['dp-path'];
 $likes = 0;
 
 
@@ -28,9 +29,11 @@ if(isset($_POST["submit"]) && !empty($_FILES["file"]["name"]))
         if(move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath))
         {
             // Insert image file name into database
-            $insert = $con->query("INSERT into posts (uploaded_image_path, follower_count, no_of_likes, username,post_caption) VALUES ('$fileName','2,50,000','$likes','$username','$caption_text')");
+            $insert = $con->query("INSERT into posts (uploaded_image_path, follower_count, no_of_likes, username,post_caption, user_dp) VALUES ('$fileName','2,50,000','$likes','$username','$caption_text','$userdp')");
             if($insert){
-                $statusMsg = "The file ".$fileName. " has been uploaded successfully.";
+                echo '<script language="javascript">';
+                echo 'alert("Posted Sucessfully ! ")';
+                echo '</script>';
             }else{
                 echo("Error description: " . $con -> error);
 

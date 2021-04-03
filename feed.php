@@ -127,11 +127,21 @@
 
                     <form id="form" action="update-profile-pic.php" method="POST" enctype="multipart/form-data">
 
-                        
+                        <!-- Profile Picture Load from DB -->
+
+                        <?php
+                            include('connection.php');
+                            $sql = "SELECT user_dp  FROM user_personal_details";
+			                $resultset = mysqli_query($con, $sql) or die("database error:". mysqli_error($con));
+                            $record = mysqli_fetch_assoc($resultset);
+                            $db_dp_path = $record['user_dp'];
+                            $_SESSION['dp-path'] = $db_dp_path;	
+                        ?>
                        
-                                        <img id="imgFileUpload" alt="Update Profile Picture" title="Update Profile Picture" src="assets/images/user dp.png"  height="70" width="70" style="cursor: pointer" />
-                                        <input type="file" onchange="form.submit()"  style="display: none" />
-                                        <?php ?>
+                                        <img id="dpUpload"  title="Update Profile Picture" src="db-files/profile-pics/<?php echo $db_dp_path;?>"  height="70" width="70" style="cursor: pointer" />
+                                        <input type="file" name="dp-file" id="dpUpload1" style="display: none;"    />
+                                        
+                                       
                                         
 
                     </form>
@@ -162,7 +172,7 @@
 
                               <div style="display: flex;">
 
-                                  <img style=" width: 50px; height: 50px;" src="assets/images/user dp.png" alt="">
+                                  <img style=" width: 50px; height: 50px;" src="db-files/profile-pics/<?php echo $db_dp_path;?>" alt="">
                                   <p style="font-size: 20px;"><?php echo $_SESSION['username'] ?></p>
 
                               </div>
@@ -241,7 +251,7 @@
 
                 include("connection.php");
 			
-			$sql = "SELECT username, follower_count, uploaded_image_path, post_caption, no_of_likes, posted_time FROM posts order by posted_time desc";
+			$sql = "SELECT user_dp, username, follower_count, uploaded_image_path, post_caption, no_of_likes, posted_time FROM posts order by posted_time desc";
 			$resultset = mysqli_query($con, $sql) or die("database error:". mysqli_error($con));			
 			while( $record = mysqli_fetch_assoc($resultset) ) {
 			?>
@@ -251,7 +261,7 @@
                     <div class="post-header">
                         
                         <!-- User Profile Picture -->
-                        <img class="user-profile-image" src="assets/images/amazon dp.png" alt="">
+                        <img class="user-profile-image" src="db-files/profile-pics/<?php echo $record['user_dp'] ?>" alt="">
 
                         <!-- Username , time , follower count -->
 
@@ -385,21 +395,30 @@
 
     <script>
 
-    document.getElementsByClassName("file").onchange = function()
-     {
-    document.getElementById("form").submit();
-                    };
+   
                 
         window.onload = function () {
             var fileupload = document.getElementById("FileUpload1");
+            var dpupload = document.getElementById("dpUpload1");
             var filePath = document.getElementById("spnFilePath");
+            
             var image = document.getElementById("imgFileUpload");
+            var dp = document.getElementById("dpUpload");
+
+            dp.onclick = function () {
+                dpupload.click();
+            };
+
             image.onclick = function () {
                 fileupload.click();
             };
             fileupload.onchange = function () {
                 var fileName = fileupload.value.split('\\')[fileupload.value.split('\\').length - 1];
                 filePath.innerHTML = "<b>Selected File: </b>" + fileName;
+            };
+
+            dpupload.onchange = function () {
+                form.submit();
             };
         };
     </script>

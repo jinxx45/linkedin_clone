@@ -6,9 +6,10 @@ include('connection.php');
     $email = $_POST['email-id'];
     $password = $_POST['password'];
     $sql = "INSERT INTO user_account_credentials  VALUES ('$username','$email','$password')";
+    $sql1 = "INSERT INTO user_personal_credentials (first_name) VALUES('$username')";
     $_SESSION['username'] = $username;
         
-    if ($con->query($sql) === TRUE) {
+    if ($con->query($sql) && $con->query($sql1) === TRUE) {
   header('location: feed.php');
   exit;
          } 
