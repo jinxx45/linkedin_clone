@@ -124,6 +124,7 @@
 
                     <div class=" ms-4 mt-2 defaultuserdp">
 
+
                     <form id="form" action="update-profile-pic.php" method="POST" enctype="multipart/form-data">
 
                         
@@ -137,6 +138,9 @@
                         
                        
                         <button type="button" data-toggle="modal" data-target="#exampleModal" class="post-button ms-3 mt-2">Start a Post</button>
+
+                        
+                       
                     </div>
 
 
