@@ -36,7 +36,7 @@ if(1)
                 echo '<script language="javascript">';
                 echo 'alert("Job Posted Sucessfully ! ")';
                 echo '</script>';
-                header("location:jobs.html");
+                header("location:jobs.php");
             }else{
                 echo("Error description: " . $con -> error);
 

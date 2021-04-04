@@ -163,66 +163,26 @@
 
             <div class="recommended-jobs-section">
 
+            <?php 
+            include('connection.php');
+
+            $sql = "SELECT job_title, company_name, company_logo, description  FROM jobs";
+            $resultset = mysqli_query($con, $sql) or die("database error:". mysqli_error($con));			
+            while( $record = mysqli_fetch_assoc($resultset) ) {
+
+            ?>
+
                 <div class="rec-job-card">
 
-                    <img class="job-logo" src="assets/images/Facebook-logo.png" alt="">
-                    <p class="job-title">Full Stack Developer</p>
-                    <p class="company-name">Facebook</p>
-                    <p class="job-description"></p>
+                    <img class="job-logo" src="db-files/jobs/companylogo/<?php echo $record['company_logo'] ?>" alt="">
+                    <p class="job-title"><?php echo $record['job_title'] ?></p>
+                    <p class="company-name"><?php echo $record['company_name'] ?></p>
+                    
 
                 </div>
 
                 
-                <div class="rec-job-card">
-                    
-                    <img class="job-logo" src="assets/images/zoho-logo.png" alt="">
-                    <p class="job-title">Software Engineer</p>
-                    <p class="company-name">Zoho Corp</p>
-                    <p class="job-description"></p>
-
-
-                </div>
-
-                
-                <div class="rec-job-card">
-                    
-                    <img class="job-logo" src="assets/images/twitterlogo.png" alt="">
-                    <p class="job-title">Marketing Specialist</p>
-                    <p class="company-name">Twitter</p>
-                    <p class="job-description"></p>
-
-                </div>
-
-                 
-                <div class="rec-job-card">
-                    
-                    <img class="job-logo" src="assets/images/amazon dp.png" alt="">
-                    <p class="job-title">Data Scientist</p>
-                    <p class="company-name">Amazon</p>
-                    <p class="job-description"></p>
-
-                </div>
-
-                <div class="rec-job-card">
-                    
-                </div>
-
-                <div class="rec-job-card">
-                    
-                </div>
-
-                <div class="rec-job-card">
-                    
-                </div>
-
-                <div class="rec-job-card">
-                    
-                </div>
-
-                <div class="rec-job-card">
-                    
-                </div>
-
+            <?php } ?>
 
                 
 
