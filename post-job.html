@@ -53,7 +53,7 @@
 
             <div class="post-job-card">
 
-                <form action="post-job.php" method="POST">
+                <form action="post-job.php" method="POST" enctype="multipart/form-data">
 
 
                     <div class="post-job-inputs">
@@ -65,6 +65,15 @@
                         <p>Company*</p>
                         <input name="company-name" type="text">
                     </div>
+
+                    <div class="post-job-inputs">
+                        <p>Company Logo*</p>
+                        <img id="imgFileUpload" alt="Select File" title="Select File" src="assets/images/image-upload.png"  height="40" width="40" style="cursor: pointer" />
+                        <span id="spnFilePath"></span>
+                        <input type="file" name="company-logo" id="FileUpload1" style="display: none" />
+                    </div>
+
+                    
     
                     <div class="post-job-inputs">
                         <p>Job Location*</p>
@@ -107,6 +116,27 @@
             </div>
 
            </div>
+
+
+           <script>
+
+   
+                
+            window.onload = function () {
+                var fileupload = document.getElementById("FileUpload1");
+                var filePath = document.getElementById("spnFilePath");
+                var image = document.getElementById("imgFileUpload");
+    
+                image.onclick = function () {
+                    fileupload.click();
+                };
+                fileupload.onchange = function () {
+                    var fileName = fileupload.value.split('\\')[fileupload.value.split('\\').length - 1];
+                    filePath.innerHTML = "<b>Selected File: </b>" + fileName;
+                };
+    
+            };
+        </script>
 
 
 </body>

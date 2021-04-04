@@ -131,7 +131,8 @@
 
                         <?php
                             include('connection.php');
-                            $sql = "SELECT user_dp  FROM user_personal_details";
+                            $username=$_SESSION['username'] ; 
+                            $sql = "SELECT user_dp  FROM user_personal_details where first_name = '$username' ";
 			                $resultset = mysqli_query($con, $sql) or die("database error:". mysqli_error($con));
                             $record = mysqli_fetch_assoc($resultset);
                             $db_dp_path = $record['user_dp'];

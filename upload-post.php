@@ -34,6 +34,7 @@ if(isset($_POST["submit"]) && !empty($_FILES["file"]["name"]))
                 echo '<script language="javascript">';
                 echo 'alert("Posted Sucessfully ! ")';
                 echo '</script>';
+                header("location:feed.php");
             }else{
                 echo("Error description: " . $con -> error);
 

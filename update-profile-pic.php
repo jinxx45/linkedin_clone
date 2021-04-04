@@ -4,9 +4,6 @@ include 'connection.php';
 session_start();
 $statusMsg = '';
 
-// POST CAPTION
-
-
 $username = $_SESSION['username'];
 
 
@@ -31,7 +28,11 @@ if(1)
             $insert = $con->query("UPDATE  user_personal_details SET user_dp = '$fileName' where first_name = '$username' ");
             $post_dp_change = $con->query("UPDATE  posts SET user_dp = '$fileName' where username = '$username' ");
             if($insert){
-                $statusMsg = "The file ".$fileName. " has been uploaded successfully.";
+                echo '<script language="javascript">';
+                echo 'alert("Profile Picture Updated Successfully! ")';
+                echo '</script>';
+                header("location:feed.php");
+                
             }else{
                 echo("Error description: " . $con -> error);
 

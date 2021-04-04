@@ -22,14 +22,14 @@
 
 .post-job-inputs > p,
 .post-job-inputs > label {
-  margin-bottom: 1.5px;
+  margin-bottom: 1px;
 }
 
 .post-job-inputs {
   display: flex;
   flex-direction: column;
   margin-left: 20px;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .job-post-button {
