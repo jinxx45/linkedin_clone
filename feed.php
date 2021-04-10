@@ -51,7 +51,7 @@
                    </div>
 
                 <div class="icon-container">
-                    <a href="network.html">
+                    <a href="network.php">
                         <div style="width:75px" class="icon-with-text">
                             <img style="margin-left: 19px; " src="assets/images/users-solid.svg" height="25" width="25"alt="">
                             <p>My Network</p>
@@ -139,7 +139,7 @@
                             $_SESSION['dp-path'] = $db_dp_path;	
                         ?>
                        
-                                        <img id="dpUpload"  title="Update Profile Picture" src="db-files/profile-pics/<?php echo $db_dp_path;?>"  height="70" width="70" style="cursor: pointer" />
+                                        <img id="dpUpload"  title="Update Profile Picture" src="db-files/profile-pics/<?php echo $db_dp_path;?>"  height="70" width="70"  style="cursor: pointer; object-fit: contain;" />
                                         <input type="file" name="dp-file" id="dpUpload1" style="display: none;"    />
                                         
                                        
@@ -173,7 +173,7 @@
 
                               <div style="display: flex;">
 
-                                  <img style=" width: 50px; height: 50px;" src="db-files/profile-pics/<?php echo $db_dp_path;?>" alt="">
+                                  <img style=" width: 50px; height: 50px; object-fit: cover;" src="db-files/profile-pics/<?php echo $db_dp_path;?>" alt="">
                                   <p style="font-size: 20px;"><?php echo $_SESSION['username'] ?></p>
 
                               </div>

@@ -44,7 +44,7 @@
                  </div>
 
               <div class="icon-container">
-                  <a href="network.html">
+                  <a href="network.php">
                       <div style="width:75px" class="icon-with-text">
                           <img style="margin-left: 19px; " src="assets/images/users-solid.svg" height="25" width="25"alt="">
                           <p>My Network</p>

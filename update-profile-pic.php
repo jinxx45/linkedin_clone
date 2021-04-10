@@ -17,7 +17,7 @@ $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
 if(1)
 {
     // Allow certain file formats
-    $allowTypes = array('jpg','png','jpeg','gif','pdf');
+    $allowTypes = array('jpg','png','jpeg','gif','pdf','jfif');
     
     if(in_array($fileType, $allowTypes))
     {

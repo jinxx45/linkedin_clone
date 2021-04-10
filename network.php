@@ -1,3 +1,8 @@
+<?php 
+    session_start();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,7 +49,7 @@
                  </div>
 
               <div class="icon-container">
-                  <a href="network.html">
+                  <a href="network.php">
                       <div style="width:75px; font-weight:bolder; filter: invert(0.5) sepia(5) hue-rotate(202deg) saturate(10) brightness(1);" class="icon-with-text">
                           <img style="margin-left: 29px; " src="assets/images/users-solid.svg" height="25" width="25"alt="">
                           <p>My Network</p>
@@ -202,124 +207,50 @@
 
                 <div style="margin-top: -10px;" class="network-rec-users-bar">
 
+
+                
+                <?php
+
+                           
+                            include('connection.php');
+                            $username=$_SESSION['username'] ; 
+                            $sql = "SELECT id ,  first_name , user_dp  FROM user_personal_details where first_name != '$username' ";
+			                $resultset = mysqli_query($con, $sql) or die("database error:". mysqli_error($con));
+                            $i=0;
+                            while( $record = mysqli_fetch_assoc($resultset) ) {
+                                $id[$i] = $record['id'];
+                           
+                        ?>
+
                    
 
                     
                     <div  class="rec-user-card">
 
-                        <img class="network-user-dp" src="assets/images/vijay-dp.jpg" alt="">
-                        <p class="network-username">JD</p>
+                        <img class="network-user-dp" src="db-files/profile-pics/<?php echo $record['user_dp'] ?>" alt="">
+                        <p class="network-username"><?php echo $record['first_name'] ?></p>
     
-                            <button class="follow-button">
-                                <p>Follow</p>
+                            <button onclick='follow_button_click(<?php echo $id[$i]?>, "<?php echo $record["first_name"] ?>")' class="follow-button">
+                                <p id="<?php echo $id[$i]?>">Follow</p>
                             </button>
                             
                     </div>
 
-
-                    
-
+                       
 
 
-                    <div class="rec-user-card">
-
-                        <img class="network-user-dp" src="assets/images/emma-dp.jpg" alt="">
-                        <p class="network-username">Sunil Aravind</p>
-
-                            <button class="follow-button">
-                                <p>Follow</p>
-                            </button>
-                   </div>
-
-                    <div class="rec-user-card">
-
-                        <img class="network-user-dp" src="assets/images/vp-adithya-dp.jpg" alt="">
-                        <p class="network-username">VP Adithya</p>
-
-                            <button class="follow-button">
-                                <p>Follow</p>
-                            </button>
-                   </div>
-
-                   <div class="rec-user-card">
-
-                    <img class="network-user-dp" src="assets/images/pragadeesh-dp.jpg" alt="">
-                    <p class="network-username">Pragadeesh</p>
-
-                        <button class="follow-button">
-                            <p>Follow</p>
-                        </button>
-
-                    </div>
-
-
-                    <div class="rec-user-card">
-
-                        <img class="network-user-dp" src="assets/images/santa-dp.jpg" alt="">
-                        <p class="network-username">Praveen Kumar</p>
-    
-                            <button class="follow-button">
-                                <p>Follow</p>
-                            </button>
-                            
-                    </div>
-
-                    
-                    <div class="rec-user-card">
-
-                        <img class="network-user-dp" src="assets/images/dan-dp.jfif" alt="">
-                        <p class="network-username">Ragul Nandan</p>
-    
-                            <button class="follow-button">
-                                <p>Follow</p>
-                            </button>
-                            
-                    </div>
-
-
-                    
-                  
-
-
-                    
-                    <div class="rec-user-card">
-
-                        <img class="network-user-dp" src="assets/images/ajith-dp.jfif" alt="">
-                        <p class="network-username">Billa</p>
-    
-                            <button class="follow-button">
-                                <p>Follow</p>
-                            </button>
-                            
-                    </div>
-
-
-                    
-                    <div class="rec-user-card">
-
-                        <img class="network-user-dp" src="assets/images/rohit-dp.jpg" alt="">
-                        <p class="network-username">Rohit Sharma</p>
-    
-                            <button class="follow-button">
-                                <p>Follow</p>
-                            </button>
-                            
-                    </div>
-
-                    <div class="rec-user-card">
-
-                        <img class="network-user-dp" src="assets/images/dhoni-dp.jpg" alt="">
-                        <p class="network-username">MS Dhoni</p>
-    
-                            <button class="follow-button">
-                                <p>Follow</p>
-                            </button>
-                            
-                    </div>
+        <?php $i++; } ?>
 
 
                    
+                         <script>
+                        function follow_button_click(id,username)
+                        {
+                            document.getElementById(id).innerHTML = 'Requested';
+                           
 
+                        }
+                        </script>
 
 
                 </div>
@@ -331,6 +262,7 @@
     </div>
 
 
+  
 
 </body>
 </html>
